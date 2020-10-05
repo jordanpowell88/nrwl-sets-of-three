@@ -1,5 +1,19 @@
+
 function countSetsOfThree(numbers: number[], threshold: number): number {
-  return 0;
+  let count = 0;
+  
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      for (let k = j + 1; k < numbers.length; k++) {
+        
+        if (numbers[i]+numbers[j]+numbers[k] <= threshold) {
+          count++
+        }
+      }
+    }
+  }
+
+  return count;
 }
 
 append(`countSetsOfThree([1,2,3,4], 7)`, countSetsOfThree([1,2,3,4], 7), 2);
